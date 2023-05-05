@@ -1,4 +1,4 @@
-const buttonElement = document.getElementById("submitButton");
+//const buttonElement = document.getElementById("submitButton");
 
 function copyInput(){
 
@@ -6,4 +6,7 @@ function copyInput(){
     const outputElement = document.getElementById("output");
     outputElement.innerHTML = inputElement.value;
 }
-buttonElement.addEventListener("click", copyInput);
+
+addEventListener ("click", copyInput);
+//or
+//addEventListener("click", () => { copyInput("click") }); 
