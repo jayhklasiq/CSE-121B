@@ -5,39 +5,39 @@
 // Step 1: Using function declaration, define a function named add that takes two arguments, number1 and number2
 function add (number1, number2){
 // Step 2: In the function, return the sum of the parameters number1 and number2
-    return (number1) + (number2);
+    return number1 + number2;
 }
 
 // S Step 3: Using function declaration, define another function named addNumbers that gets the values of two HTML form controls with IDs of addend1 and addend2. Pass them to the add function
 function addNumbers(){
-    const addend1 = parseInt(document.getElementById("addend1").value);
-    const addend2 = parseInt(document.getElementById("addend2").value);
-    let sum = subtract(minuend, subtrahend);
+    const addend1 = parseInt(document.querySelector("#addend1"));
+    const addend2 = parseInt(document.querySelector("#addend2"));
+    let sum = add(addend1, addend2);
     return sum
 }
 // Step 4: Assign the return value to an HTML form element with an ID of sum
-document.getElementById("sum").innerHTML = addNumbers().value;
+document.getElementById("sum").innerHTML = addNumbers();
 // Step 5: Add a "click" event listener to the HTML button with an ID of addNumbers that calls the addNumbers function
-addEventListener ("click", addNumbers);
+document.getElementById("addNumbers").addEventListener ("click", addNumbers);
 // Step 6: Using function expressions, repeat Steps 1-5 with new functions named subtract and subtractNumbers and HTML form controls with IDs of minuend, subtrahend, difference and subtractNumbers
 function subtract(number1, number2) {
     return number1 - number2;
 }
 function subtractNumbers(){
-    const minuend = parseInt(document.getElementById("minuend").value);
-    const subtrahend = parseInt(document.getElementById("subtrahend").value);
+    const minuend = parseInt(document.getElementById("minuend"));
+    const subtrahend = parseInt(document.getElementById("subtrahend"));
     let minus = subtract(minuend, subtrahend);
     return minus;
 }
-document.getElementById("difference").innerHTML = subtractNumbers().value;
+document.getElementById("difference").innerHTML = subtractNumbers();
 addEventListener ("click", subtractNumbers);
 // Step 7: Using arrow functions, repeat Steps 1-5 with new functions named multiply and mulitplyNumbers and HTML form controls with IDs of factor1, factor2, product and multiplyNumbers
 const multiply = (number1, number2) => number1 * number2;
 
 
 const multiplyNumbers = () => {
-    const factor1 = parseInt(document.getElementById("factor1").value);
-    const factor2 = parseInt(document.getElementById("factor2").value);
+    const factor1 = parseInt(document.getElementById("factor1"));
+    const factor2 = parseInt(document.getElementById("factor2"));
     let solution = multiply(factor1, factor2)
     return solution
 }
@@ -49,9 +49,9 @@ const divide = (number1, number2) => number1 / number2;
 
 
 const divideNumbers = () => {
-    const factor1 = parseInt(document.getElementById("dividend").value);
-    const factor2 = parseInt(document.getElementById("divisor").value);
-    let solution = multiply(factor1, factor2)
+    const dividend = parseInt(document.getElementById("dividend").value);
+    const divisor = parseInt(document.getElementById("divisor").value);
+    let solution = multiply(dividend, divisor)
     return solution
 }
 document.getElementById("quotient").innerHTML = divideNumbers();
